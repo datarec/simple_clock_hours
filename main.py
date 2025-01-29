@@ -4,10 +4,8 @@ import subprocess
 import time
 import io
 
-
 def clear_screen():
     subprocess.run(["cls"], shell=True)
-
 
 def timebreak():
     time.sleep(3)
@@ -42,7 +40,8 @@ def view_hours_worked():
             value = val
         print("    Hours worked: {}".format(value))
         timebreak()
-        call_script()       
+        call_script()
+               
 
 
 def reset_hours_worked():
@@ -79,4 +78,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\n\n    Exiting...")
+        time.sleep(0.5)
+        
